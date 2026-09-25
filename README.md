@@ -1,4 +1,4 @@
-# CIS MasterData
+# CIS master data
 
 The golden copy of every folder, file and default that CIS-Platform creates,
 and the reference it compares an installation against. Only files and folders
@@ -18,5 +18,5 @@ Rules:
 - `revision` in manifest.json changes when a default value changes and the
   format does not. A format change is a version bump in `scopes`, made in the
   same commit as the platform's `CisDataVersion.h` and its upgrade step.
-- The platform ships this tree beside its EXE as `MasterData\` and never
+- The platform ships this tree beside its EXE as `master_cis_data` and never
   writes into it.
