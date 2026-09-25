@@ -2,7 +2,7 @@
   "contract": "cis.master-data",
   "version": 1,
   "revision": 1,
-  "_note": "The golden copy of every folder, file and default the platform creates or compares against. The platform and CIS.Spec.Management read it from <exe>\\MasterData; nothing ever writes there. 'scopes' must equal Contracts\\CisDataVersion.h in the build that ships this tree - the build checks. 'revision' changes when a default VALUE changes with the format unchanged.",
+  "_note": "The golden copy of every folder, file and default the platform creates or compares against. The platform and CIS.Spec.Management read it from <exe>\\master_cis_data; nothing ever writes there. 'scopes' must equal Contracts\\CisDataVersion.h in the build that ships this tree - the build checks. 'revision' changes when a default VALUE changes with the format unchanged.",
   "scopes": {
     "Platform": "1.0",
     "Gravure": "1.0",
