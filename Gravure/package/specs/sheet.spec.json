@@ -1,0 +1,77 @@
+{
+  "contract": "cis.spec-schema",
+  "version": 1,
+  "id": "sheet",
+  "title": "Sheet acquisition parameters",
+  "file": "sheet_spec.ini",
+  "scope": "model",
+  "ownedByCode": true,
+  "_ownedByCode": "A C++ class writes this file and reads its ABSENCE as state. Nothing else may create it: reconcile only adds keys to one that exists.",
+  "header": [
+    "Sheet acquisition parameters. Delete this file to return to defaults.",
+    "Every value below is also editable from Teach > Sheet Spec."
+  ],
+  "sections": [
+    {
+      "name": "Sheet",
+      "fields": [
+        {
+          "key": "FixedSheetRows",
+          "type": "int",
+          "default": "0",
+          "min": 0,
+          "max": 100000,
+          "description": "Rows per sheet when the length is known - an encoder or a fixed repeat. 0 means DETECT the end from the image instead, using the gap settings below. Detection is the general case; a fixed length is the reliable one, and a line that can state it should."
+        }
+      ]
+    },
+    {
+      "name": "Gap",
+      "fields": [
+        {
+          "key": "GapLevel",
+          "type": "int",
+          "default": "40",
+          "min": 0,
+          "max": 255,
+          "description": "Mean row intensity at or below which a row is GAP rather than sheet"
+        },
+        {
+          "key": "SheetIsBright",
+          "type": "bool",
+          "default": "1",
+          "description": "1 when the sheet is brighter than the gap between sheets. 0 inverts that, for a dark substrate running past a bright background."
+        },
+        {
+          "key": "GapRows",
+          "type": "int",
+          "default": "8",
+          "min": 1,
+          "max": 10000,
+          "description": "Consecutive gap rows that end a sheet. Guards against a genuinely dark band inside the printed area being read as the end of one."
+        }
+      ]
+    },
+    {
+      "name": "Bounds",
+      "fields": [
+        {
+          "key": "MinSheetRows",
+          "type": "int",
+          "default": "64",
+          "min": 1,
+          "max": 100000,
+          "description": "A run shorter than this is discarded as noise rather than emitted as a tiny sheet"
+        },
+        {
+          "key": "MaxSheetRows",
+          "type": "int",
+          "default": "8192",
+          "min": 1,
+          "max": 1000000,
+          "description": "A run longer than this is emitted truncated and reported: a sheet that never ends means the detector has lost sync, and silently allocating forever is the worse failure."
+        }
+      ]
+    }
+  ]
+}

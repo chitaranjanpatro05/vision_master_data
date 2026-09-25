@@ -1,0 +1,15 @@
+{
+  "_note": "What this machine IS. \"role\" decides which half of the rest applies. server: distributeClients, distributeBacklog, distributeWaitMs, distributePort. client: serverHost, clientId, clientCropShare, clientStoreImages, clientImageFolder, clientImageBudgetGB. discoveryPort is used by both. The half that does not apply is KEPT, not deleted, so changing role does not lose it. serverHost \"auto\" means find a server on this network; a host name or address pins this machine to that server and no discovery runs.",
+  "role": "server",
+  "discoveryPort": 5399,
+  "distributeClients": 0,
+  "distributePort": 5400,
+  "distributeBacklog": 4,
+  "distributeWaitMs": 5000,
+  "serverHost": "auto",
+  "clientId": 1,
+  "clientCropShare": "",
+  "clientStoreImages": false,
+  "clientImageFolder": "C:\\CIS_ClientImages",
+  "clientImageBudgetGB": 20
+}

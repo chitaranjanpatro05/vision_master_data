@@ -1,0 +1,116 @@
+{
+  "contract": "cis.spec-schema",
+  "version": 1,
+  "id": "inspection",
+  "title": "Model inspection settings",
+  "file": "inspectionSpec.ini",
+  "scope": "model",
+  "header": [
+    "Model-level inspection settings - what the machine inspects AGAINST.",
+    "Per-ROI parameters live in the region file beside each ROI's geometry."
+  ],
+  "sections": [
+    {
+      "name": "Model",
+      "fields": [
+        {
+          "key": "Name",
+          "type": "string",
+          "default": "",
+          "description": "The model's name, as the operator knows it",
+          "readOnly": true
+        },
+        {
+          "key": "Description",
+          "type": "string",
+          "default": "",
+          "description": "Free text describing what this recipe is for"
+        },
+        {
+          "key": "CreatedBy",
+          "type": "string",
+          "default": "",
+          "description": "Account that first saved this model",
+          "readOnly": true
+        },
+        {
+          "key": "ModifiedBy",
+          "type": "string",
+          "default": "",
+          "description": "Account that last saved it",
+          "readOnly": true
+        },
+        {
+          "key": "CreatedAt",
+          "type": "int",
+          "default": "0",
+          "description": "When it was created, as a UTC time_t",
+          "readOnly": true
+        },
+        {
+          "key": "ModifiedAt",
+          "type": "int",
+          "default": "0",
+          "description": "When it was last saved, as a UTC time_t",
+          "readOnly": true
+        }
+      ]
+    },
+    {
+      "name": "Inspection",
+      "fields": [
+        {
+          "key": "DefaultType",
+          "type": "int",
+          "default": "2",
+          "min": 0,
+          "max": 4,
+          "description": "Inspection type a newly drawn ROI starts from: 0 Presence, 1 Colour, 2 Defect, 3 Barcode, 4 Measurement"
+        },
+        {
+          "key": "DefaultEngine",
+          "type": "int",
+          "default": "0",
+          "min": 0,
+          "max": 1,
+          "description": "Algorithm engine a new ROI starts from: 0 rule-based, 1 deep learning"
+        },
+        {
+          "key": "DefaultLighting",
+          "type": "int",
+          "default": "0",
+          "min": 0,
+          "max": 3,
+          "description": "Light channel a new ROI starts from: 0 white, 1 red, 2 green, 3 blue"
+        },
+        {
+          "key": "DefaultTolerance",
+          "type": "double",
+          "default": "0.9500",
+          "min": 0.0,
+          "max": 1.0,
+          "description": "Tolerance a newly drawn ROI starts from"
+        },
+        {
+          "key": "VerdictCutoff",
+          "type": "double",
+          "default": "50.0000",
+          "min": 0.0,
+          "max": 100.0,
+          "description": "Confidence at or above which a defect makes the panel NG, used for any ROI that left its own threshold at 0"
+        }
+      ]
+    },
+    {
+      "name": "Result",
+      "fields": [
+        {
+          "key": "SaveResultImages",
+          "type": "bool",
+          "default": "0",
+          "description": "Write per-panel images under <result>\\<model>\\result. Off by default: a line inspecting continuously fills a disk with images nobody asked for."
+        }
+      ]
+    }
+  ]
+}

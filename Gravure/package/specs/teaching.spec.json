@@ -1,0 +1,98 @@
+{
+  "contract": "cis.spec-schema",
+  "version": 1,
+  "id": "teaching",
+  "title": "Teaching algorithm parameters",
+  "file": "teaching_spec.ini",
+  "scope": "model",
+  "header": [
+    "Teaching algorithm parameters. Delete this file to return to defaults.",
+    "Every value below is also editable from Teach > Teaching Config."
+  ],
+  "sections": [
+    {
+      "name": "Match",
+      "fields": [
+        {
+          "key": "ScoreThreshold",
+          "type": "double",
+          "default": "0.7000",
+          "min": 0.05,
+          "max": 0.99,
+          "description": "M-point match score at or above which a hit counts"
+        },
+        {
+          "key": "MaxInstances",
+          "type": "int",
+          "default": "8192",
+          "min": 1,
+          "max": 100000,
+          "description": "Safety ceiling on returned matches. Must sit FAR above the real board count: reaching it silently truncates to the strongest N, and which ones survive is then arbitrary. The PCB Map log warns if it is hit."
+        }
+      ]
+    },
+    {
+      "name": "Array",
+      "fields": [
+        {
+          "key": "DetectMissing",
+          "type": "bool",
+          "default": "0",
+          "description": "Report positions that SHOULD hold a board but do not. Only meaningful once the matcher returns about one hit per board - check the match count against the board count in the PCB Map log line first."
+        },
+        {
+          "key": "ClusterTolerance",
+          "type": "double",
+          "default": "0.5000",
+          "min": 0.1,
+          "max": 1.0,
+          "description": "How far two board origins may sit apart and still be one column/row, as a fraction of the taught PCB size"
+        },
+        {
+          "key": "ClusterMinShare",
+          "type": "double",
+          "default": "0.2500",
+          "min": 0.0,
+          "max": 0.9,
+          "description": "Share of the typical column/row population a cluster must reach to be believed, which is what rejects one-off matches"
+        }
+      ]
+    },
+    {
+      "name": "Component",
+      "fields": [
+        {
+          "key": "CheckComponents",
+          "type": "bool",
+          "default": "0",
+          "description": "Check each located board for its configured Chip/Cavity ROIs"
+        },
+        {
+          "key": "MatchThreshold",
+          "type": "double",
+          "default": "0.6000",
+          "min": 0.05,
+          "max": 0.99,
+          "description": "Correlation at or above which a component counts as present"
+        }
+      ]
+    },
+    {
+      "name": "Simulation",
+      "fields": [
+        {
+          "key": "ImageFolder",
+          "type": "path",
+          "default": "",
+          "description": "Folder of panel images to run this model against when there is no camera. Absolute path - it describes this application's disk, not the model, so a model folder copied to another machine is expected to need it re-pointed."
+        },
+        {
+          "key": "LastImage",
+          "type": "string",
+          "default": "",
+          "description": "File name (not a path) of the image last opened from that folder. Blank starts at the first image there. This is NOT the panel the ROIs were taught on - that stays in PanelRgninfo.txt, and the two may legitimately differ."
+        }
+      ]
+    }
+  ]
+}

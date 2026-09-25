@@ -1,0 +1,18 @@
+{
+  "contract": "cis.plugins",
+  "version": 1,
+  "_note": "Which DLL implements each contract for this product. An UNBOUND contract is not an error -- the plugin host applies its own build-derived default, which is why an empty 'bindings' behaves exactly as no file at all.",
+  "_contracts": "IProductPlugin (what this application inspects), IImageProcessor (image operations for the Option tab's Image Analysis panel) and IImageSource (where frames come from). These are different axes: the first is the PRODUCT, implemented once per thing-being-inspected; the second is a VENDOR, the same operation implemented twice; the third is the ACQUISITION, one per kind of camera or feed.",
+  "_source": "IImageSource is OPTIONAL and normally absent. Say nothing and the application uses its built-in file sources, including the 'live:' path prefix that picks continuous over trigger-driven -- which is what every installation did before sources became bindable. Name one and it is used instead, and the whole path string is handed to it untouched, because a source DLL's config is its own business: 'shm://CIS_EMU?slots=8', 'milgige://DEV0?fps=60'. A bound source that will not load leaves acquisition unavailable and is NOT quietly replaced by the built-in one -- a product that names a source meant it.",
+  "_product": "One product DLL carries the teach page, the recipe format and file layout, the frame assembler, the inspection engine and the verdict rule -- as one set. They are not separately bindable because they are not separately choosable: a teach page that draws mask regions is only useful with the engine that skips them and the recipe that stores them.",
+  "_nomatcher": "IPanelMatcher is NOT bindable. A product measures on MIL, which the application hands it directly -- letting a config file pick the library that locates boards would mean a map built by the wrong one looking exactly like a map built by the right one.",
+  "_nomapper": "IPanelMapper is NO LONGER bindable. Panel map generation is one facet of the product DLL (IProductPlugin::CreatePanelMapper). A leftover binding is read, ignored, and warned about in the log.",
+  "_forms": "Short form binds a DLL by name: \"IImageProcessor\": \"OpenCV\". Long form is an object: { \"dll\": \"MIL\" }.",
+  "_naming": "The name is the DLL's, without path or extension -- it is resolved beside the EXE. 'OpenCV' means CIS.Vision.OpenCV.dll. Vendor aliases ('OpenCV', 'Matrox', 'MIL') exist only for IImageProcessor; a product DLL is named literally, because it is somebody's product-specific code rather than one of two known implementations of a fixed operation.",
+  "_nofallback": "There is no second vendor and no second product. A bound DLL that will not load leaves the contract unimplemented and the feature disabled -- a result produced by a library other than the one you asked for is worse than no result, and an application that silently fell back from one product to another would be inspecting the wrong thing. A 'fallback' key left over from an older file is read and ignored.",
+  "_mock": "The .Mock DLL is the same package: config.json \"mock\": true swaps the DLL at start. Never write the .Mock name here.",
+  "bindings": {
+    "IProductPlugin": "CIS.Product.Gravure",
+    "IImageProcessor": "OpenCV"
+  }
+}

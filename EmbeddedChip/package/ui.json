@@ -1,0 +1,106 @@
+{
+  "_note": "What this product is CALLED and where its panes sit. Every value here is the default the platform starts from; a package may change any of them.",
+  "_strings": "Captions, by id. 'app.brand' is the wordmark in the top bar; nav.<view> names a tab; pane.<pane> a pane.",
+  "_panes": "Pane ids: InspectionImage, DefectList, DefectSummary, Logging, ModelManager, ClientList, DashboardToolbar, TeachingToolbar, OptionToolbar. ClientList is the SERVER's list of its attached inspection clients; it never appears on a machine running as a client, whatever this file says.",
+  "_dock": "left | right | top | bottom | none",
+  "_showOn": "Which tabs the pane appears on. [\"*\"] means every tab.",
+  "_sizes": "widthPct / heightPct are percentages of the frame; width / height are pixels. 'below' stacks a pane under another on the same dock bar.",
+  "_layoutClient": "Overrides applied on a machine whose role is client. Only the keys stated change.",
+  "strings": {
+    "app.brand": "CIS-Platform",
+    "nav.dashboard": "Dashboard",
+    "nav.teaching": "Teaching",
+    "nav.recipe": "Recipe",
+    "nav.inspect": "Inspect",
+    "nav.option": "Option",
+    "pane.inspectionimage": "Inspection Image",
+    "pane.defectlist": "Defect List",
+    "pane.defectsummary": "Defect Summary",
+    "pane.logging": "Log",
+    "pane.modelmanager": "Models",
+    "pane.clientlist": "Clients"
+  },
+  "layout": {
+    "panes": {
+      "InspectionImage": {
+        "dock": "left",
+        "widthPct": 31,
+        "showOn": [
+          "Dashboard"
+        ]
+      },
+      "DefectList": {
+        "dock": "right",
+        "widthPct": 24,
+        "heightPct": 55,
+        "showOn": [
+          "Dashboard"
+        ]
+      },
+      "DefectSummary": {
+        "dock": "right",
+        "widthPct": 24,
+        "heightPct": 45,
+        "below": "DefectList",
+        "showOn": [
+          "Dashboard"
+        ]
+      },
+      "Logging": {
+        "dock": "bottom",
+        "heightPct": 18,
+        "showOn": [
+          "*"
+        ]
+      },
+      "ModelManager": {
+        "dock": "left",
+        "width": 260,
+        "height": 500,
+        "showOn": [
+          "Recipe"
+        ]
+      },
+      "ClientList": {
+        "dock": "bottom",
+        "heightPct": 40,
+        "showOn": [
+          "Option"
+        ]
+      },
+      "DashboardToolbar": {
+        "dock": "top",
+        "showOn": [
+          "Dashboard"
+        ]
+      },
+      "TeachingToolbar": {
+        "dock": "top",
+        "showOn": [
+          "Teaching"
+        ]
+      },
+      "OptionToolbar": {
+        "dock": "top",
+        "showOn": [
+          "Option"
+        ]
+      }
+    },
+    "_unknownPane": {
+      "dock": "left",
+      "widthPct": 20
+    },
+    "_pctRange": {
+      "min": 5,
+      "max": 90
+    }
+  },
+  "layoutClient": {
+    "panes": {
+      "Logging": {
+        "heightPct": 40
+      }
+    }
+  }
+}

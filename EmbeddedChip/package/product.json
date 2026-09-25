@@ -1,0 +1,23 @@
+{
+  "contract": "cis.product",
+  "version": 1,
+  "_note": "What this product is called, which module runs it, and which of the platform's tabs and panes it selects. A product selects and orders tabs; it cannot name one into existence.",
+  "title": "Embedded Chip",
+  "modules": [
+    "Inspection"
+  ],
+  "views": [
+    "Dashboard",
+    "Teaching",
+    "Recipe",
+    "Inspect",
+    "Option"
+  ],
+  "panes": [
+    "DefectList",
+    "DefectSummary",
+    "ModelManager",
+    "Logging",
+    "InspectionImage"
+  ]
+}

@@ -1,0 +1,2 @@
+# The platform writes these files with LF; keep the golden copy identical on every checkout.
+* text eol=lf

@@ -1,0 +1,18 @@
+# CIS panel region info - written by the Teach GUI.
+# All coordinates are relative to BASE_POSITION.
+
+[SYSTEM]
+BASE_POSITION = 0, 0		// Base position, left top pos of top-left pcb (row 1, col 1)
+
+[INSP_AREA]
+INSP_ROI_COUNT = 1
+INSP_ROI_1_INFO = 0, 0, 0, 0, 1		// left, top, right, bottom, is-full
+
+[CHIP]
+CHIP_TYPE_COUNT = 0
+
+[PCB]
+PCB_TYPE_COUNT = 0
+
+[PANEL_ARRAY]
+PCB_COUNT = 0

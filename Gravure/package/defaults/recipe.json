@@ -1,0 +1,38 @@
+{
+  "contract": "cis.recipe-defaults",
+  "version": 1,
+  "product": "Gravure",
+  "_note": "What a newly drawn region starts as. Taught values live in SheetRgninfo.txt and are never reconciled.",
+  "mpoint": {
+    "scoreThreshold": {
+      "default": 0.7,
+      "min": 0.05,
+      "max": 0.99,
+      "description": "Below this the sheet is not aligned at all"
+    }
+  },
+  "inspRoi": {
+    "threshold": {
+      "default": 128,
+      "min": 0,
+      "max": 255,
+      "description": "Grey level at or beyond which a pixel is a candidate defect"
+    },
+    "darkDefect": {
+      "default": true,
+      "description": "true: a defect is DARKER than threshold"
+    },
+    "minAreaPx": {
+      "default": 12,
+      "min": 1,
+      "max": 1000000,
+      "description": "Smallest blob worth reporting, in pixels"
+    }
+  },
+  "maskRoi": {
+    "autoExtracted": {
+      "default": false,
+      "description": "Drawn by the operator (false) or extracted from the spec (true)"
+    }
+  }
+}

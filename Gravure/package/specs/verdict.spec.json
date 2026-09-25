@@ -1,0 +1,35 @@
+{
+  "contract": "cis.spec-schema",
+  "version": 1,
+  "id": "verdict",
+  "title": "Verdict rule",
+  "file": "verdict_spec.ini",
+  "scope": "model",
+  "header": [
+    "How findings on one sheet become OK or NG.",
+    "A sheet with findings under both caps is OK: on a web that sheet is saleable, and failing it would stop a line running correctly."
+  ],
+  "sections": [
+    {
+      "name": "Verdict",
+      "fields": [
+        {
+          "key": "MaxDefectAreaPx",
+          "type": "double",
+          "default": "2000.0000",
+          "min": 1.0,
+          "max": 100000000.0,
+          "description": "A single finding with more pixels than this makes the sheet NG"
+        },
+        {
+          "key": "MaxDefectCount",
+          "type": "int",
+          "default": "12",
+          "min": 0,
+          "max": 100000,
+          "description": "More findings than this on one sheet make it NG, whatever their size"
+        }
+      ]
+    }
+  ]
+}

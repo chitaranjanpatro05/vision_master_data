@@ -1,0 +1,7 @@
+{
+  "_note": "What this machine RUNS. Rewritten on every model and product switch, so nothing that must survive a routine save belongs here - see distribution.json. products.<name> holds that product's roots and lastModel; blank lastModel means the product has never opened a model.",
+  "productsPath": "C:\\CIS_Products",
+  "activeProduct": "",
+  "mock": false,
+  "products": {}
+}

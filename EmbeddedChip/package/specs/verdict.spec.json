@@ -1,0 +1,26 @@
+{
+  "contract": "cis.spec-schema",
+  "version": 1,
+  "id": "verdict",
+  "title": "Verdict rule",
+  "file": "verdict_spec.ini",
+  "scope": "model",
+  "header": [
+    "How findings on one panel become OK or NG."
+  ],
+  "sections": [
+    {
+      "name": "Verdict",
+      "fields": [
+        {
+          "key": "ConfidenceCutoff",
+          "type": "double",
+          "default": "50.0000",
+          "min": 0.0,
+          "max": 100.0,
+          "description": "Confidence at or above which a defect makes the panel NG, for any ROI that left its own threshold at 0"
+        }
+      ]
+    }
+  ]
+}
