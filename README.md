@@ -7,7 +7,7 @@ live here; no code.
     manifest.json            scopes (must equal CisDataVersion.h), roots, revision
     platform/settings/       config.json, distribution.json, distribution.limits.json
     <Scope>/package/         product.json, ui.json, plugins.json, specs/*.spec.json, defaults/recipe.json
-    <Scope>/specdb/          common/, Models/, defaultModel/ (files with no schema only)
+    <Scope>/spec/          common/, Models/, defaultModel/ (files with no schema only)
     <Scope>/results/_model/  log/, result/  (applied to each model)
 
 Rules:
