@@ -1,5 +1,5 @@
 {
-  "_note": "What this machine IS. \"role\" decides which half of the rest applies. server: distributeClients, distributeBacklog, distributeWaitMs, distributePort. client: serverHost, clientId, clientCropShare, clientStoreImages, clientImageFolder, clientImageBudgetGB. discoveryPort is used by both. The half that does not apply is KEPT, not deleted, so changing role does not lose it. serverHost \"auto\" means find a server on this network; a host name or address pins this machine to that server and no discovery runs.",
+  "_note": "What this machine IS. \"role\" decides which half of the rest applies. server: distributeClients, distributeBacklog, distributeWaitMs, distributePort. client: serverHost, clientId, clientCropShare, clientImageFolder. What a client KEEPS (full images, budgets) is not set here: it follows the server's <spec>\\common\\storage.json. discoveryPort is used by both. The half that does not apply is KEPT, not deleted, so changing role does not lose it. serverHost \"auto\" means find a server on this network; a host name or address pins this machine to that server and no discovery runs.",
   "role": "server",
   "discoveryPort": 5399,
   "distributeClients": 0,
@@ -9,7 +9,5 @@
   "serverHost": "auto",
   "clientId": 1,
   "clientCropShare": "",
-  "clientStoreImages": false,
-  "clientImageFolder": "C:\\CIS_ClientImages",
-  "clientImageBudgetGB": 20
+  "clientImageFolder": "C:\\CIS_ClientImages"
 }

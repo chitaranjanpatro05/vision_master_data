@@ -26,12 +26,19 @@
     "min": 1,
     "max": 16
   },
-  "clientImageBudgetGB": {
-    "min": 1,
-    "max": 4096
-  },
   "imageStore": {
     "queueMaxBytes": 268435456,
     "indexKept": 2000
+  },
+  "logFile": {
+    "queueMaxLines": 20000
+  },
+  "resultWriter": {
+    "queueMaxBytes": 268435456
+  },
+  "storageMonitor": {
+    "pollSeconds": 30,
+    "rescanMinutes": 10,
+    "autoDeleteMinutes": 60
   }
 }

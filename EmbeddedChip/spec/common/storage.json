@@ -1,0 +1,37 @@
+{
+  "_note": "What this product's machines keep on disk and for how long. ONE file for the server AND every client that reads its spec share: a client never has a setting of its own, it reads this one through the model folder its server names. Edited only on the server, from the storage window behind the Dashboard's disk indicator. Folder LOCATIONS are not here - they are per machine (config.json, distribution.json).",
+  "_full": "FULL MEANS STOP, NOT DELETE. When the images and crops kept under the result folder reach budgetGB.results, writing them stops and an alarm is raised; unit records and the log carry on. Below minFreeDiskGB on the drive, everything but the log stops. Nothing is ever deleted because a budget was reached.",
+  "_autoDelete": "Separate from fullness, and OFF by default: when a category is enabled, whole day folders older than 'days' are deleted, once an hour. Today's folder is never touched.",
+  "crops": {
+    "keep": true
+  },
+  "fullImages": {
+    "mode": "ng",
+    "_mode": "off | ng | all. A full image stays on the PC that inspected the unit and is never sent to the server. On a client, 'ng' means a unit with findings: the verdict is the server's, made after the merge."
+  },
+  "budgetGB": {
+    "results": 200
+  },
+  "minFreeDiskGB": 5,
+  "indicator": {
+    "warnFreePercent": 20,
+    "critFreePercent": 10
+  },
+  "log": {
+    "level": "info",
+    "_level": "debug | info | warning | error: the lowest level written to the log file. The Logging pane shows everything regardless."
+  },
+  "autoDelete": {
+    "records": { "enabled": false, "days": 365 },
+    "crops":   { "enabled": false, "days": 90 },
+    "images":  { "enabled": false, "days": 30 },
+    "logs":    { "enabled": false, "days": 90 }
+  },
+  "_limits": {
+    "_note": "Read from the MASTER copy, never from an installation's: the range each value is clamped to. Keys under _ are not copied by the reconcile.",
+    "days": { "min": 1, "max": 3650 },
+    "budgetGB": { "min": 1, "max": 100000 },
+    "minFreeDiskGB": { "min": 0, "max": 1000 },
+    "freePercent": { "min": 1, "max": 99 }
+  }
+}

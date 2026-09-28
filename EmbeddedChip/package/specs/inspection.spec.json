@@ -100,17 +100,6 @@
           "description": "Confidence at or above which a defect makes the panel NG, used for any ROI that left its own threshold at 0"
         }
       ]
-    },
-    {
-      "name": "Result",
-      "fields": [
-        {
-          "key": "SaveResultImages",
-          "type": "bool",
-          "default": "0",
-          "description": "Write per-panel images under <result>\\<model>\\result. Off by default: a line inspecting continuously fills a disk with images nobody asked for."
-        }
-      ]
     }
   ]
 }
