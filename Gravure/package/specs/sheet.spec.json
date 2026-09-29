@@ -72,6 +72,19 @@
           "description": "A run longer than this is emitted truncated and reported: a sheet that never ends means the detector has lost sync, and silently allocating forever is the worse failure."
         }
       ]
+    },
+    {
+      "name": "Simulation",
+      "fields": [
+        {
+          "key": "MockInspectMs",
+          "type": "int",
+          "default": "0",
+          "min": 0,
+          "max": 60000,
+          "description": "MOCK product only: how long the mock engine takes to inspect one sheet, in milliseconds, so a simulated line has the real line's timing. The real engine ignores it. 0 answers at once."
+        }
+      ]
     }
   ]
 }

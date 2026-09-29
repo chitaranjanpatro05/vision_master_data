@@ -4,9 +4,9 @@
   "revision": 1,
   "_note": "The golden copy of every folder, file and default the platform creates or compares against. The platform and CIS.Data.Management read it from <exe>\\master_cis_data; nothing ever writes there. 'scopes' must equal Contracts\\CisDataVersion.h in the build that ships this tree - the build checks. 'revision' changes when a default VALUE changes with the format unchanged.",
   "scopes": {
-    "Platform": "2.0",
-    "Gravure": "1.1",
-    "EmbeddedChip": "1.1"
+    "Platform": "1.0",
+    "Gravure": "1.0",
+    "EmbeddedChip": "1.0"
   },
   "roots": {
     "_note": "Where data goes when config.json names no path. spec and result are PER PRODUCT: <root>\\<product>.",
