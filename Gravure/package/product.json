@@ -18,6 +18,7 @@
     "DefectSummary",
     "ModelManager",
     "Logging",
-    "InspectionImage"
+    "InspectionImage",
+    "ClientList"
   ]
 }

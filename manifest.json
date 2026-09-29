@@ -1,7 +1,7 @@
 {
   "contract": "cis.master-data",
   "version": 1,
-  "revision": 1,
+  "revision": 2,
   "_note": "The golden copy of every folder, file and default the platform creates or compares against. The platform and CIS.Data.Management read it from <exe>\\master_cis_data; nothing ever writes there. 'scopes' must equal Contracts\\CisDataVersion.h in the build that ships this tree - the build checks. 'revision' changes when a default VALUE changes with the format unchanged.",
   "scopes": {
     "Platform": "1.0",

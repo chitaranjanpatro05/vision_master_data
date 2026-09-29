@@ -1,13 +1,7 @@
 {
-  "_note": "What this machine IS. \"role\" decides which half of the rest applies. server: distributeClients, distributeBacklog, distributeWaitMs, distributePort. client: serverHost, clientId, clientCropShare, clientImageFolder. What a client KEEPS (full images, budgets) is not set here: it follows the server's <spec>\\common\\storage.json. discoveryPort is used by both. The half that does not apply is KEPT, not deleted, so changing role does not lose it. serverHost \"auto\" means find a server on this network; a host name or address pins this machine to that server and no discovery runs.",
-  "role": "server",
-  "discoveryPort": 5399,
-  "distributeClients": 0,
+  "_note": "What this server needs to run its inspection clients. There is no role: a copy of the application is a server unless a server LAUNCHED it as a client, handing it its server, id and product in its environment. 'clients' is the server's list, edited in its Clients pane: id (1-16, unique), name, host (empty = this PC), exePath (as that PC sees it), enabled, autoStart (start with the server), and for another PC user and password (encrypted for this machine). distributePort is where the server listens and what it tells each client to dial. clientCropShare is where clients write defect crops - a share the server can read. What a client KEEPS (full images, budgets) follows the server's <spec>\\common\\storage.json.",
   "distributePort": 5400,
   "distributeBacklog": 4,
-  "distributeWaitMs": 5000,
-  "serverHost": "auto",
-  "clientId": 1,
   "clientCropShare": "",
-  "clientImageFolder": "C:\\CIS_ClientImages"
+  "clients": []
 }

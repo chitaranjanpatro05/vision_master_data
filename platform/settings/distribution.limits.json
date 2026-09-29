@@ -1,9 +1,5 @@
 {
   "_note": "Clamps applied after distribution.json is read. A value outside its range is pulled to the nearer bound, except where 'outOfRange' names a replacement. Image-store caps live here too: they bound RAM while the writer is behind, not what an operator tunes.",
-  "distributeClients": {
-    "min": 0,
-    "max": 16
-  },
   "distributePort": {
     "min": 1,
     "max": 65535,
@@ -12,19 +8,6 @@
   "distributeBacklog": {
     "min": 1,
     "max": 256
-  },
-  "distributeWaitMs": {
-    "min": 0,
-    "max": 120000
-  },
-  "discoveryPort": {
-    "min": 1,
-    "max": 65535,
-    "outOfRange": 5399
-  },
-  "clientId": {
-    "min": 1,
-    "max": 16
   },
   "imageStore": {
     "queueMaxBytes": 268435456,
