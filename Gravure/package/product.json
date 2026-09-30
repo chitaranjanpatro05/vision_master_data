@@ -10,7 +10,6 @@
     "Dashboard",
     "Teaching",
     "Recipe",
-    "Inspect",
     "Option"
   ],
   "panes": [
@@ -18,7 +17,6 @@
     "DefectSummary",
     "ModelManager",
     "Logging",
-    "InspectionImage",
-    "ClientList"
+    "InspectionImage"
   ]
 }

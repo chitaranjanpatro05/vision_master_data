@@ -1,7 +1,7 @@
 {
   "_note": "What this product is CALLED and where its panes sit. Every value here is the default the platform starts from; a package may change any of them.",
   "_strings": "Captions, by id. 'app.brand' is the wordmark in the top bar; nav.<view> names a tab; pane.<pane> a pane.",
-  "_panes": "Pane ids: InspectionImage, DefectList, DefectSummary, Logging, ModelManager, ClientList, DashboardToolbar, TeachingToolbar, OptionToolbar. ClientList is the SERVER's list of its attached inspection clients; it never appears on a machine running as a client, whatever this file says.",
+  "_panes": "Pane ids: InspectionImage, DefectList, DefectSummary, Logging, ModelManager, DashboardToolbar, TeachingToolbar, OptionToolbar. There is no Clients pane any more: the top bar's SERVER n/m box is the status and the Clients window the detail.",
   "_dock": "left | right | top | bottom | none",
   "_showOn": "Which tabs the pane appears on. [\"*\"] means every tab.",
   "_sizes": "widthPct / heightPct are percentages of the frame; width / height are pixels. 'below' stacks a pane under another on the same dock bar.",
@@ -17,8 +17,7 @@
     "pane.defectlist": "Defect List",
     "pane.defectsummary": "Defect Summary",
     "pane.logging": "Log",
-    "pane.modelmanager": "Models",
-    "pane.clientlist": "Clients"
+    "pane.modelmanager": "Models"
   },
   "layout": {
     "panes": {
@@ -59,13 +58,6 @@
         "height": 500,
         "showOn": [
           "Recipe"
-        ]
-      },
-      "ClientList": {
-        "dock": "bottom",
-        "heightPct": 40,
-        "showOn": [
-          "Option"
         ]
       },
       "DashboardToolbar": {
