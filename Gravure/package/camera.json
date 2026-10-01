@@ -1,0 +1,39 @@
+{
+  "_note": "Where this product's frames come from: the camera setup, edited on the SERVER in the Camera window (top bar, left of SERVER) and only while no run is on. 'type' picks one of the four sections below; the others are kept, so switching back loses nothing. This file is the ONE statement of the camera: an IImageSource line left in plugins.json is ignored and logged.",
+  "type": "simulation",
+  "simulation": {
+    "_note": "A folder of images played as a camera would stream them, in name order. For Gravure the images are consecutive captures of the web and sheets are cut across them; for a product whose image IS the unit, one image is one unit. stripRows 0 = one image per frame. loop: true = when the folder ends, start again from the first image; false = the run stops by itself after the last one.",
+    "folder": "",
+    "fps": 4,
+    "stripRows": 0,
+    "loop": true
+  },
+  "emulator": {
+    "_note": "CIS.Emulator.exe publishing into a shared-memory ring on this PC; the emulator sets the line speed (--fps). fifo is the platform's live queue depth, which the ring must exceed by two slots.",
+    "ring": "CIS_EMU",
+    "timeoutMs": 5000,
+    "fifo": 4
+  },
+  "mil": {
+    "_note": "A Matrox frame grabber through MIL (CIS.Source.MilCam). device is DEV0..DEV3; dcf is the camera's digitizer configuration file - empty for a GigE camera, which takes M_DEFAULT.",
+    "device": "DEV0",
+    "dcf": "",
+    "buffers": 8
+  },
+  "sapera": {
+    "_note": "A Teledyne DALSA frame grabber through Sapera LT (CIS.Source.Sapera). server is the board's Sapera server name as CamExpert lists it, resource the acquisition device on it, ccf the camera file CamExpert saves.",
+    "server": "",
+    "resource": 0,
+    "ccf": "",
+    "buffers": 8
+  },
+  "_limits": {
+    "_note": "Read from the MASTER copy, never from an installation's: the range each value is clamped to. Keys under _ are not copied by the reconcile.",
+    "fps": { "min": 1, "max": 1000 },
+    "stripRows": { "min": 0, "max": 65536 },
+    "timeoutMs": { "min": 500, "max": 60000 },
+    "fifo": { "min": 1, "max": 64 },
+    "buffers": { "min": 3, "max": 64 },
+    "resource": { "min": 0, "max": 15 }
+  }
+}

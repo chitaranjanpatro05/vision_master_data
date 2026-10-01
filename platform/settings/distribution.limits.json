@@ -9,6 +9,15 @@
     "min": 1,
     "max": 256
   },
+  "rdmaPort": {
+    "min": 1024,
+    "max": 65535,
+    "outOfRange": 5410
+  },
+  "clientReadyWaitSeconds": {
+    "min": 5,
+    "max": 120
+  },
   "imageStore": {
     "queueMaxBytes": 268435456,
     "indexKept": 2000

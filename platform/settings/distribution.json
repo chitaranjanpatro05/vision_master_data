@@ -1,7 +1,9 @@
 {
-  "_note": "What this server needs to run its inspection clients. There is no role: a copy of the application is a server unless a server LAUNCHED it as a client, handing it its server, id and product in its environment. 'clients' is the server's list, edited in its Clients pane: id (1-16, unique), name, host (empty = this PC), exePath (as that PC sees it), enabled, autoStart (start with the server), and for another PC user and password (encrypted for this machine). distributePort is where the server listens and what it tells each client to dial. clientCropShare is where clients write defect crops - a share the server can read. What a client KEEPS (full images, budgets) follows the server's <spec>\\common\\storage.json.",
+  "_note": "What this server needs to run its inspection clients. There is no role: a copy of the application is a server unless a server LAUNCHED it as a client, handing it its server, id and product in its environment. 'clients' is the server's list, edited in its Clients pane: id (1-16, unique), name, host (empty = this PC), exePath (as that PC sees it), enabled, autoStart (start with the server), and for another PC user and password (encrypted for this machine). distributePort is where the server listens and what it tells each client to dial. clientCropShare is where clients write defect crops - a share the server can read. clientReadyWaitSeconds is how long the Start button waits for each client marked to start with the server, counted from that client's launch (checking or copying its program does not count); after it, a run may start without the ones still missing. SHEET IMAGES: a client on this PC takes them through shared memory; one on ANOTHER PC only through RDMA (CIS.Transport.NetworkDirect.dll on both PCs, the server listening on rdmaPort) - without it that client is refused with RDMA failed. Everything else between server and client is TCP on distributePort. What a client KEEPS (full images, budgets) follows the server's <spec>\\common\\storage.json.",
   "distributePort": 5400,
   "distributeBacklog": 4,
   "clientCropShare": "",
+  "clientReadyWaitSeconds": 20,
+  "rdmaPort": 5410,
   "clients": []
 }
